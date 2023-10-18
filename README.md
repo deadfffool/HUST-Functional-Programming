@@ -1,6 +1,8 @@
 # HUST-Functional-Programming
-HUST-Functional-Programming
-结课测试
+
+#结课测试
+
+
 #1
 功能比较：
 take函数：
