@@ -21,28 +21,21 @@ rtake函数：
 性能较好：rtake函数是尾递归的，它从列表的尾部开始提取元素并将结果累积在参数 taken 中，不会生成中间列表。这使得它在提取大量元素时性能较好。rtake函数在性能上优于take函数，特别是在处理大型列表时
 
 两个函数的 work 均为 O(n)
+
 # 2
 ```python
-nextperm [2,3,1,4]
-↓
-next [2] [3, 1, 4]
-↓
-next [3, 2] [1, 4]
-↓
-swap [3, 2]
-↓
-3::swap([2])
-   ↓
-   1::2::4
-↓
-[3, 1, 2, 4]
+nextperm [3, 2, 4, 1]
+=>next [3] [2, 4, 1]
+=>swap[3]
+=>2::3::[4,1]
+=>[2,3,4,1]
 ```
 
 # 3
 ```python
 fun quickSort([]: int list) : int list = []
   | quickSort(x::xs: int list) =
-    let
+    let ##定义partition函数
         fun partition([], less, greater) = (less, greater)
           | partition(y::ys, less, greater) =
             if y < x then
